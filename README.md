@@ -88,8 +88,8 @@ All text content lives in **`src/data/index.ts`**:
 
 In `src/components/Contact.tsx`, update:
 ```ts
-value: "jesutoba.lopez@apsu.edu",
-href: "mailto:jesutoba.lopez@apsu.edu",
+value: "jesutobalopez@gmail.com",
+href: "mailto:jesutobalopez@gmail.com",
 ```
 
 ### Add your resume
@@ -122,7 +122,7 @@ Follow the prompts. Done in ~90 seconds.
 ### Option B: Vercel Dashboard
 
 1. Go to [vercel.com](https://vercel.com) → **New Project**
-2. Import your GitHub repo (`JesutobaLopezfilio/jesutoba-portfolio`)
+2. Import your GitHub repo (`Dav-lopez/jesutoba-portfolio`)
 3. Framework: **Next.js** (auto-detected)
 4. Click **Deploy**
 

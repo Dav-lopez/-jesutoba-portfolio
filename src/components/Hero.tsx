@@ -14,7 +14,6 @@ export default function Hero() {
         padding: "5rem 2rem 4rem",
       }}
     >
-      {/* Badge */}
       <div
         style={{
           display: "inline-flex",
@@ -36,14 +35,12 @@ export default function Hero() {
             height: 7,
             borderRadius: "50%",
             background: "var(--teal)",
-            animation: "pulse-dot 2s infinite",
             display: "inline-block",
           }}
         />
-        Open to opportunities · Graduating May 2026
+        Open to opportunities · Graduated May 2026
       </div>
 
-      {/* Heading */}
       <h1
         style={{
           fontSize: "clamp(2.4rem,6vw,4.2rem)",
@@ -61,7 +58,6 @@ export default function Hero() {
         &amp; Scalable Platforms
       </h1>
 
-      {/* Subtitle */}
       <p
         style={{
           fontSize: "clamp(1rem,2.5vw,1.2rem)",
@@ -71,10 +67,10 @@ export default function Hero() {
           lineHeight: 1.65,
         }}
       >
-        Machine Learning · Data Engineering · Software Engineering · SRE &amp; Platform
+        Machine Learning · Data Engineering · Software Engineering · SRE &amp;
+        Platform
       </p>
 
-      {/* Role pills */}
       <div
         style={{
           display: "flex",
@@ -84,28 +80,37 @@ export default function Hero() {
           margin: "1.25rem 0 2rem",
         }}
       >
-        {["ML Engineer", "Data Engineer", "Software Engineer", "Platform / SRE"].map(
-          (role) => (
-            <span
-              key={role}
-              style={{
-                background: "var(--surface)",
-                border: "1px solid var(--border2)",
-                color: "var(--text2)",
-                padding: "5px 14px",
-                borderRadius: 100,
-                fontSize: 12,
-                fontWeight: 500,
-              }}
-            >
-              {role}
-            </span>
-          )
-        )}
+        {[
+          "ML Engineer",
+          "Data Engineer",
+          "Software Engineer",
+          "Platform / SRE",
+        ].map((role) => (
+          <span
+            key={role}
+            style={{
+              background: "var(--surface)",
+              border: "1px solid var(--border2)",
+              color: "var(--text2)",
+              padding: "5px 14px",
+              borderRadius: 100,
+              fontSize: 12,
+              fontWeight: 500,
+            }}
+          >
+            {role}
+          </span>
+        ))}
       </div>
 
-      {/* CTA buttons */}
-      <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: 12,
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
         <a
           href="#projects"
           style={{
@@ -116,19 +121,12 @@ export default function Hero() {
             fontSize: 14,
             fontWeight: 600,
             display: "inline-block",
-            transition: "all .2s",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "#5A54E0";
-            (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "var(--accent)";
-            (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+            textDecoration: "none",
           }}
         >
           View Projects
         </a>
+
         <a
           href="/resume.pdf"
           download
@@ -141,15 +139,7 @@ export default function Hero() {
             fontWeight: 500,
             border: "1px solid var(--border2)",
             display: "inline-block",
-            transition: "all .2s",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "var(--surface)";
-            (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "transparent";
-            (e.currentTarget as HTMLElement).style.borderColor = "var(--border2)";
+            textDecoration: "none",
           }}
         >
           Download Resume

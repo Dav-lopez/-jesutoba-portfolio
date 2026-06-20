@@ -1,6 +1,6 @@
 "use client";
-
 import Image from "next/image";
+
 
 const tags = [
   "Machine Learning",
@@ -94,7 +94,7 @@ export default function About() {
               marginBottom: "1rem",
             }}
           >
-            I&apos;m pursuing a Master&apos;s in Predictive Analytics at{" "}
+            I hold a Master of Science in Computer Science & Quantitative Methods; Major in Predictive Analytics at{" "}
             <strong style={{ color: "var(--text)", fontWeight: 600 }}>
               Austin Peay State University
             </strong>{" "}
@@ -133,8 +133,8 @@ export default function About() {
               marginBottom: "1.75rem",
             }}
           >
-            Based in Clarksville, Tennessee. Available for ML Engineer, Data
-            Engineer, Software Engineer, and SRE roles — remote or on-site.
+            Based in United State of America. Available for ML Engineer, Data
+            Engineer, Software Engineer, DevOps and SRE roles — remote or on-site.
           </p>
 
           {/* Tags */}

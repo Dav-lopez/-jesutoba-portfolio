@@ -4,8 +4,8 @@ const contactLinks = [
   {
     icon: "✉️",
     label: "Email",
-    value: "jesutoba.lopez@apsu.edu",
-    href: "mailto:jesutoba.lopez@apsu.edu",
+    value: "jesutobalopez@gmail.com",
+    href: "mailto:jesutobalopez@gmail.com",
   },
   {
     icon: "💼",
@@ -16,8 +16,8 @@ const contactLinks = [
   {
     icon: "🐙",
     label: "GitHub",
-    value: "JesutobaLopezfilio",
-    href: "https://github.com/JesutobaLopezfilio",
+    value: "Dav-lopez",
+    href: "https://github.com/Dav-lopez",
   },
   {
     icon: "📄",
