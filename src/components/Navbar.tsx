@@ -52,7 +52,7 @@ export default function Navbar() {
         }}
       >
         <Link href="/" style={{ fontSize: 15, fontWeight: 700, letterSpacing: "-0.3px", color: "var(--text)" }}>
-          Jesutoba<span style={{ color: "var(--accent3)" }}>Lopez</span>
+          J<span style={{ color: "var(--accent3)" }}>L</span>
         </Link>
 
         {/* Desktop links */}
