@@ -6,17 +6,34 @@ import type { GithubUser } from "@/types";
 const GITHUB_USERNAME = "Dav-lopez";
 
 function ContribGrid() {
-  const weights = [0, 0, 0, 0, 1, 1, 1, 2, 2, 3];
-  const colors = [
-    "var(--border)",
-    "rgba(108,99,255,.2)",
-    "rgba(108,99,255,.45)",
-    "rgba(108,99,255,.75)",
-    "var(--accent)",
-  ];
-  const cells = Array.from({ length: 364 }, (_, i) => {
-    const w = weights[Math.floor((i * 7 + i * 3) % 10)];
-    return colors[w];
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const check = () => {
+      setIsDark(document.documentElement.getAttribute("data-theme") !== "light");
+    };
+    check();
+    const observer = new MutationObserver(check);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    return () => observer.disconnect();
+  }, []);
+
+  const emptyColor = isDark ? "#161b22" : "#ebedf0";
+  const greens = ["#0e4429", "#006d32", "#26a641", "#39d353"];
+
+  let seed = 42;
+  function rand() {
+    seed = (seed * 1664525 + 1013904223) & 0xffffffff;
+    return (seed >>> 0) / 0xffffffff;
+  }
+
+  const cells = Array.from({ length: 364 }, () => {
+    const r = rand();
+    if (r < 0.52) return emptyColor;
+    if (r < 0.80) return greens[0];
+    if (r < 0.91) return greens[1];
+    if (r < 0.97) return greens[2];
+    return greens[3];
   });
 
   return (
@@ -24,7 +41,7 @@ function ContribGrid() {
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(52, 1fr)",
-        gap: 2,
+        gap: 3,
         marginTop: "0.75rem",
       }}
     >
@@ -41,7 +58,6 @@ function ContribGrid() {
     </div>
   );
 }
-
 export default function Github() {
   const [user, setUser] = useState<GithubUser | null>(null);
   const [stars, setStars] = useState<number | null>(null);

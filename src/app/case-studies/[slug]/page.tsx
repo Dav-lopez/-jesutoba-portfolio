@@ -30,7 +30,7 @@ export default function CategoryPage() {
       <div style={{ background: "var(--bg2)", borderBottom: "1px solid var(--border)", padding: "0 2rem" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Link href="/" style={{ fontSize: 15, fontWeight: 700, color: "var(--text)", letterSpacing: "-.3px" }}>
-            Jesutoba<span style={{ color: "var(--accent3)" }}>Lopez</span>
+            J<span style={{ color: "var(--accent3)" }}>L</span>
           </Link>
           <Link
             href="/#case-studies"
@@ -114,7 +114,7 @@ export default function CategoryPage() {
       </div>
 
       {/* Upload instructions */}
-      <div style={{ padding: "0 2rem 4rem" }}>
+      {/* <div style={{ padding: "0 2rem 4rem" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{
             background: "var(--surface)", border: "1px dashed var(--border2)",
@@ -148,7 +148,7 @@ export default function CategoryPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -76,7 +76,7 @@ export default function Contact() {
             />
             <div>
               <strong style={{ display: "block", fontSize: 15, color: "var(--text)" }}>
-                Available for full-time roles · Graduated May 2026
+                Available for full-time roles ·
               </strong>
               <span style={{ fontSize: 13, color: "var(--text2)" }}>
                 Based in USA · Open to remote &amp; relocation
