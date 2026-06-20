@@ -8,6 +8,7 @@ import Projects from "@/components/Projects";
 import Github from "@/components/Github";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ProjectPDFs from "@/components/ProjectPDFs";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
+        <ProjectPDFs />
         <Github />
         <Contact />
       </main>
