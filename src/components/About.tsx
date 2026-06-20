@@ -98,7 +98,7 @@ export default function About() {
             <strong style={{ color: "var(--text)", fontWeight: 600 }}>
               Austin Peay State University
             </strong>{" "}
-            (GPA 4.0), with enterprise engineering experience spanning machine
+            (GPA 4.0) and also a certified Data Scientist, with enterprise engineering experience spanning machine
             learning, data engineering, software development, and platform
             reliability.
           </p>
