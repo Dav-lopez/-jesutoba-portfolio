@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { caseStudyCategories, PDFProject } from "@/data/caseStudies";
@@ -31,7 +32,9 @@ export default function CategoryPage() {
           <Link href="/" style={{ fontSize: 15, fontWeight: 700, color: "var(--text)", letterSpacing: "-.3px" }}>
             Jesutoba<span style={{ color: "var(--accent3)" }}>Lopez</span>
           </Link>
-          <Link href="/#case-studies" style={{ fontSize: 13, color: "var(--text2)", display: "flex", alignItems: "center", gap: 6, transition: "color .18s" }}
+          <Link
+            href="/#case-studies"
+            style={{ fontSize: 13, color: "var(--text2)", display: "flex", alignItems: "center", gap: 6, transition: "color .18s" }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--text)")}
             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--text2)")}
           >
@@ -125,7 +128,11 @@ export default function CategoryPage() {
               <code style={{ background: "var(--bg3)", border: "1px solid var(--border2)", borderRadius: 4, padding: "1px 7px", fontSize: 12, color: "var(--accent3)" }}>
                 public/projects/{cat.slug}/
               </code>
-              {" "}using the filenames shown on each card. Then commit and push — Vercel redeploys automatically.
+              {" "}then update the filename in{" "}
+              <code style={{ background: "var(--bg3)", border: "1px solid var(--border2)", borderRadius: 4, padding: "1px 7px", fontSize: 12, color: "var(--accent3)" }}>
+                src/data/caseStudies.ts
+              </code>
+              {" "}to match. Commit and push — Vercel redeploys automatically.
             </p>
             <div style={{ marginTop: "1rem", display: "flex", flexDirection: "column", gap: 6 }}>
               {cat.projects.map((proj) => (
@@ -134,7 +141,7 @@ export default function CategoryPage() {
                     {proj.file ? "✅" : "⬜"}
                   </span>
                   <code style={{ fontSize: 12, color: proj.file ? "var(--teal)" : "var(--text2)" }}>
-                    public/projects/{cat.slug}/{proj.file ? proj.file.split("/").pop() : proj.id + ".pdf"}
+                    {proj.file ? proj.file : `public/projects/${cat.slug}/${proj.id}.pdf`}
                   </code>
                 </div>
               ))}
@@ -147,15 +154,20 @@ export default function CategoryPage() {
 }
 
 function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentColor: string; bgColor: string }) {
+  const [viewing, setViewing] = useState(false);
+
   return (
-    <div style={{
-      background: "var(--surface)", border: "1px solid var(--border)",
-      borderRadius: 12, overflow: "hidden",
-      transition: "border-color .18s, transform .18s",
-    }}
+    <div
+      style={{
+        background: "var(--surface)", border: "1px solid var(--border)",
+        borderRadius: 12, overflow: "hidden",
+        transition: "border-color .18s, transform .18s",
+      }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = accentColor;
-        (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+        if (!viewing) {
+          (e.currentTarget as HTMLElement).style.borderColor = accentColor;
+          (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+        }
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
@@ -164,14 +176,39 @@ function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentC
     >
       <div style={{ height: 3, background: accentColor }} />
       <div style={{ padding: "1.3rem" }}>
-        {/* PDF preview icon */}
-        <div style={{
-          background: bgColor, borderRadius: 10, padding: "1.5rem",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          marginBottom: "1rem", fontSize: "2.5rem",
-        }}>
-          📄
-        </div>
+
+        {/* Inline preview iframe */}
+        {viewing ? (
+          <div style={{ marginBottom: "1rem" }}>
+            <iframe
+              src={proj.file!}
+              style={{
+                width: "100%", height: 480,
+                border: "1px solid var(--border)",
+                borderRadius: 8, background: "#fff", display: "block",
+              }}
+              title={proj.title}
+            />
+            <button
+              onClick={() => setViewing(false)}
+              style={{
+                marginTop: 8, fontSize: 12, color: "var(--text2)",
+                background: "none", border: "none", cursor: "pointer",
+                textDecoration: "underline", padding: 0,
+              }}
+            >
+              ✕ Close preview
+            </button>
+          </div>
+        ) : (
+          <div style={{
+            background: bgColor, borderRadius: 10, padding: "1.5rem",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            marginBottom: "1rem", fontSize: "2.5rem",
+          }}>
+            📄
+          </div>
+        )}
 
         <div style={{ fontSize: 14, fontWeight: 600, color: "var(--text)", marginBottom: ".4rem", lineHeight: 1.35 }}>
           {proj.title}
@@ -186,7 +223,9 @@ function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentC
               background: "var(--bg3)", color: "var(--text2)",
               padding: "2px 7px", borderRadius: 3, fontSize: 10,
               border: "1px solid var(--border)",
-            }}>{tag}</span>
+            }}>
+              {tag}
+            </span>
           ))}
         </div>
 
@@ -196,22 +235,51 @@ function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentC
           </div>
         )}
 
-        <a
-          href={proj.file!}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "block", width: "100%", textAlign: "center",
-            background: accentColor, color: "#fff",
-            padding: "9px 0", borderRadius: 7,
-            fontSize: 13, fontWeight: 600,
-            transition: "opacity .18s",
-          }}
-          onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = ".85")}
-          onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
-        >
-          View Project PDF
-        </a>
+        {/* Two buttons: preview inline + open in new tab */}
+        <div style={{ display: "flex", gap: 8 }}>
+          <button
+            onClick={() => setViewing(!viewing)}
+            style={{
+              flex: 1, textAlign: "center",
+              background: viewing ? "var(--surface2)" : accentColor,
+              color: viewing ? "var(--text)" : "#fff",
+              border: viewing ? "1px solid var(--border2)" : "none",
+              padding: "9px 0", borderRadius: 7,
+              fontSize: 12, fontWeight: 600, cursor: "pointer",
+              transition: "opacity .18s",
+            }}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = ".85")}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
+          >
+            {viewing ? "Close Preview" : "Quick Preview"}
+          </button>
+
+          
+            href={proj.file!}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              flex: 1, textAlign: "center",
+              background: "transparent",
+              color: "var(--text)",
+              border: "1px solid var(--border2)",
+              padding: "9px 0", borderRadius: 7,
+              fontSize: 12, fontWeight: 500,
+              transition: "background .18s, border-color .18s",
+              textDecoration: "none", display: "block",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "var(--surface2)";
+              (e.currentTarget as HTMLElement).style.borderColor = accentColor;
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "transparent";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--border2)";
+            }}
+          >
+            Open Full ↗
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -242,7 +310,9 @@ function ComingSoonCard({ proj }: { proj: PDFProject }) {
             background: "var(--bg3)", color: "var(--text2)",
             padding: "2px 7px", borderRadius: 3, fontSize: 10,
             border: "1px solid var(--border)",
-          }}>{tag}</span>
+          }}>
+            {tag}
+          </span>
         ))}
       </div>
       <div style={{

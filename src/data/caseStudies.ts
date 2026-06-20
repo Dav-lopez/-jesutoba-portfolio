@@ -33,10 +33,10 @@ export const caseStudyCategories: CaseStudyCategory[] = [
     projects: [
       {
         id: "Final_Project_Predictive",
-        title: "Predictive Maintenance ML Platform",
+        title: "Final_Project_Predictive",
         description:
           "End-to-end ML system forecasting equipment failure with 95% accuracy using Scikit-Learn. Covers data pipeline, feature engineering, model selection, validation, and deployment architecture.",
-        file: "/projects/ml/Final_Project_Predictive",
+        file: "/projects/ml/Final_Project_Predictive.pdf",
         tags: ["Python", "Scikit-Learn", "Feature Engineering", "Model Validation"],
         pages: "18 pages",
       },
