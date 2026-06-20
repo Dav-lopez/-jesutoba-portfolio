@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Dark theme (default) ── */
+:root,
+[data-theme="dark"] {
+  --bg: #0A0A0F;
+  --bg2: #111118;
+  --bg3: #16161F;
+  --surface: #1C1C27;
+  --surface2: #222230;
+  --border: #2A2A3A;
+  --border2: #333345;
+  --text: #F0F0F8;
+  --text2: #9090B0;
+  --accent: #6C63FF;
+  --accent2: #8B5CF6;
+  --accent3: #A78BFA;
+  --teal: #10B981;
+  --teal2: #34D399;
+  --gold: #F59E0B;
+  --coral: #F97316;
+  --nav-bg: rgba(10, 10, 15, 0.88);
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  --bg: #F8F8FC;
+  --bg2: #F0F0F8;
+  --bg3: #E8E8F4;
+  --surface: #FFFFFF;
+  --surface2: #F4F4FC;
+  --border: #DDDDF0;
+  --border2: #C8C8E8;
+  --text: #0A0A1A;
+  --text2: #606080;
+  --accent: #5A51E8;
+  --accent2: #7C3AED;
+  --accent3: #6C63FF;
+  --teal: #0A9A6A;
+  --teal2: #0D7A55;
+  --gold: #D97706;
+  --coral: #EA580C;
+  --nav-bg: rgba(248, 248, 252, 0.88);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.25s, color 0.25s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(108, 99, 255, 0.3);
+  color: var(--text);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease forwards;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent3), var(--teal2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
