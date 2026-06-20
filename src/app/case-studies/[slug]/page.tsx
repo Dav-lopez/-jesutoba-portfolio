@@ -1,4 +1,4 @@
-"use client";
+"use client"; 
 
 import { useState } from "react";
 import { useParams } from "next/navigation";
@@ -159,8 +159,10 @@ function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentC
   return (
     <div
       style={{
-        background: "var(--surface)", border: "1px solid var(--border)",
-        borderRadius: 12, overflow: "hidden",
+        background: "var(--surface)",
+        border: "1px solid var(--border)",
+        borderRadius: 12,
+        overflow: "hidden",
         transition: "border-color .18s, transform .18s",
       }}
       onMouseEnter={(e) => {
@@ -183,18 +185,26 @@ function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentC
             <iframe
               src={proj.file!}
               style={{
-                width: "100%", height: 480,
+                width: "100%",
+                height: 480,
                 border: "1px solid var(--border)",
-                borderRadius: 8, background: "#fff", display: "block",
+                borderRadius: 8,
+                background: "#fff",
+                display: "block",
               }}
               title={proj.title}
             />
             <button
               onClick={() => setViewing(false)}
               style={{
-                marginTop: 8, fontSize: 12, color: "var(--text2)",
-                background: "none", border: "none", cursor: "pointer",
-                textDecoration: "underline", padding: 0,
+                marginTop: 8,
+                fontSize: 12,
+                color: "var(--text2)",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                textDecoration: "underline",
+                padding: 0,
               }}
             >
               ✕ Close preview
@@ -202,9 +212,14 @@ function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentC
           </div>
         ) : (
           <div style={{
-            background: bgColor, borderRadius: 10, padding: "1.5rem",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            marginBottom: "1rem", fontSize: "2.5rem",
+            background: bgColor,
+            borderRadius: 10,
+            padding: "1.5rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: "1rem",
+            fontSize: "2.5rem",
           }}>
             📄
           </div>
@@ -219,11 +234,17 @@ function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentC
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: ".85rem" }}>
           {proj.tags.map((tag) => (
-            <span key={tag} style={{
-              background: "var(--bg3)", color: "var(--text2)",
-              padding: "2px 7px", borderRadius: 3, fontSize: 10,
-              border: "1px solid var(--border)",
-            }}>
+            <span
+              key={tag}
+              style={{
+                background: "var(--bg3)",
+                color: "var(--text2)",
+                padding: "2px 7px",
+                borderRadius: 3,
+                fontSize: 10,
+                border: "1px solid var(--border)",
+              }}
+            >
               {tag}
             </span>
           ))}
@@ -235,17 +256,21 @@ function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentC
           </div>
         )}
 
-        {/* Two buttons: preview inline + open in new tab */}
+        {/* Two buttons: quick preview + open full in new tab */}
         <div style={{ display: "flex", gap: 8 }}>
           <button
             onClick={() => setViewing(!viewing)}
             style={{
-              flex: 1, textAlign: "center",
+              flex: 1,
+              textAlign: "center",
               background: viewing ? "var(--surface2)" : accentColor,
               color: viewing ? "var(--text)" : "#fff",
               border: viewing ? "1px solid var(--border2)" : "none",
-              padding: "9px 0", borderRadius: 7,
-              fontSize: 12, fontWeight: 600, cursor: "pointer",
+              padding: "9px 0",
+              borderRadius: 7,
+              fontSize: 12,
+              fontWeight: 600,
+              cursor: "pointer",
               transition: "opacity .18s",
             }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = ".85")}
@@ -254,19 +279,23 @@ function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentC
             {viewing ? "Close Preview" : "Quick Preview"}
           </button>
 
-          
+          <a
             href={proj.file!}
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              flex: 1, textAlign: "center",
+              flex: 1,
+              textAlign: "center",
               background: "transparent",
               color: "var(--text)",
               border: "1px solid var(--border2)",
-              padding: "9px 0", borderRadius: 7,
-              fontSize: 12, fontWeight: 500,
+              padding: "9px 0",
+              borderRadius: 7,
+              fontSize: 12,
+              fontWeight: 500,
               transition: "background .18s, border-color .18s",
-              textDecoration: "none", display: "block",
+              textDecoration: "none",
+              display: "block",
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.background = "var(--surface2)";
@@ -288,13 +317,22 @@ function ProjectCard({ proj, accentColor, bgColor }: { proj: PDFProject; accentC
 function ComingSoonCard({ proj }: { proj: PDFProject }) {
   return (
     <div style={{
-      background: "var(--surface)", border: "1px dashed var(--border2)",
-      borderRadius: 12, padding: "1.3rem", opacity: 0.7,
+      background: "var(--surface)",
+      border: "1px dashed var(--border2)",
+      borderRadius: 12,
+      padding: "1.3rem",
+      opacity: 0.7,
     }}>
       <div style={{
-        background: "var(--bg3)", borderRadius: 10, padding: "1.5rem",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        marginBottom: "1rem", fontSize: "2.5rem", opacity: .4,
+        background: "var(--bg3)",
+        borderRadius: 10,
+        padding: "1.5rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: "1rem",
+        fontSize: "2.5rem",
+        opacity: 0.4,
       }}>
         📄
       </div>
@@ -306,19 +344,31 @@ function ComingSoonCard({ proj }: { proj: PDFProject }) {
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: "1rem" }}>
         {proj.tags.map((tag) => (
-          <span key={tag} style={{
-            background: "var(--bg3)", color: "var(--text2)",
-            padding: "2px 7px", borderRadius: 3, fontSize: 10,
-            border: "1px solid var(--border)",
-          }}>
+          <span
+            key={tag}
+            style={{
+              background: "var(--bg3)",
+              color: "var(--text2)",
+              padding: "2px 7px",
+              borderRadius: 3,
+              fontSize: 10,
+              border: "1px solid var(--border)",
+            }}
+          >
             {tag}
           </span>
         ))}
       </div>
       <div style={{
-        display: "block", width: "100%", textAlign: "center",
-        background: "var(--bg3)", color: "var(--text2)",
-        padding: "9px 0", borderRadius: 7, fontSize: 13, fontWeight: 500,
+        display: "block",
+        width: "100%",
+        textAlign: "center",
+        background: "var(--bg3)",
+        color: "var(--text2)",
+        padding: "9px 0",
+        borderRadius: 7,
+        fontSize: 13,
+        fontWeight: 500,
         border: "1px solid var(--border2)",
       }}>
         Coming Soon
