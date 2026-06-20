@@ -23,10 +23,7 @@ export default function Navbar() {
   const toggleTheme = () => {
     const next = !isDark;
     setIsDark(next);
-    document.documentElement.setAttribute(
-      "data-theme",
-      next ? "dark" : "light"
-    );
+    document.documentElement.setAttribute("data-theme", next ? "dark" : "light");
   };
 
   return (
@@ -53,40 +50,19 @@ export default function Navbar() {
           gap: "1rem",
         }}
       >
-        <Link
-          href="/"
-          style={{
-            fontSize: 15,
-            fontWeight: 700,
-            letterSpacing: "-0.3px",
-            color: "var(--text)",
-            textDecoration: "none",
-          }}
-        >
-          Jesutoba
-          <span style={{ color: "var(--accent3)" }}>Lopez</span>
+        <Link href="/" style={{ fontSize: 15, fontWeight: 700, letterSpacing: "-0.3px", color: "var(--text)" }}>
+          Jesutoba<span style={{ color: "var(--accent3)" }}>Lopez</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <ul
-          className="desktop-nav"
-          style={{
-            display: "flex",
-            gap: "1.5rem",
-            listStyle: "none",
-            margin: 0,
-            padding: 0,
-          }}
-        >
+        {/* Desktop links */}
+        <ul style={{ display: "flex", gap: "1.5rem", listStyle: "none" }} className="desktop-nav">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                style={{
-                  fontSize: 13,
-                  color: "var(--text2)",
-                  textDecoration: "none",
-                }}
+                style={{ fontSize: 13, color: "var(--text2)", transition: "color .2s" }}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text)")}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--text2)")}
               >
                 {link.label}
               </a>
@@ -94,20 +70,11 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-            flexShrink: 0,
-          }}
-        >
-          {/* Theme Toggle */}
+        <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
+          {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            aria-label={
-              isDark ? "Switch to light mode" : "Switch to dark mode"
-            }
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
             title={isDark ? "Switch to light mode" : "Switch to dark mode"}
             style={{
               width: 36,
@@ -120,13 +87,22 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              transition: "border-color .2s, background .2s",
               color: "var(--text)",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
+              (e.currentTarget as HTMLElement).style.background = "var(--surface2)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--border2)";
+              (e.currentTarget as HTMLElement).style.background = "var(--surface)";
             }}
           >
             {isDark ? "🌙" : "☀️"}
           </button>
 
-          {/* Hire Me Button */}
+          {/* Hire me */}
           <a
             href="#contact"
             style={{
@@ -136,27 +112,18 @@ export default function Navbar() {
               borderRadius: 6,
               fontSize: 13,
               fontWeight: 600,
+              transition: "opacity .2s",
               whiteSpace: "nowrap",
-              textDecoration: "none",
             }}
+            onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.85")}
+            onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = "1")}
           >
-            Hire Me
+            Hire me
           </a>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            style={{
-              display: "none",
-            }}
-            className="mobile-menu-btn"
-          >
-            ☰
-          </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {menuOpen && (
         <div
           style={{
@@ -176,7 +143,6 @@ export default function Navbar() {
                 color: "var(--text2)",
                 fontSize: 14,
                 borderBottom: "1px solid var(--border)",
-                textDecoration: "none",
               }}
             >
               {link.label}
@@ -185,20 +151,9 @@ export default function Navbar() {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         @media (max-width: 640px) {
-          .desktop-nav {
-            display: none !important;
-          }
-
-          .mobile-menu-btn {
-            display: block !important;
-            background: transparent;
-            border: none;
-            color: var(--text);
-            font-size: 20px;
-            cursor: pointer;
-          }
+          .desktop-nav { display: none !important; }
         }
       `}</style>
     </nav>

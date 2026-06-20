@@ -35,7 +35,6 @@ export default function Projects() {
         >
           Work
         </p>
-
         <h2
           style={{
             fontSize: "clamp(1.6rem,4vw,2.4rem)",
@@ -47,7 +46,6 @@ export default function Projects() {
         >
           Featured Projects
         </h2>
-
         <p
           style={{
             fontSize: 15,
@@ -76,10 +74,25 @@ export default function Projects() {
                 border: "1px solid var(--border)",
                 borderRadius: 12,
                 padding: "1.5rem",
+                transition: "border-color .2s, transform .2s",
                 position: "relative",
                 overflow: "hidden",
+                cursor: "default",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--accent)";
+                (e.currentTarget as HTMLElement).style.transform =
+                  "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--border)";
+                (e.currentTarget as HTMLElement).style.transform =
+                  "translateY(0)";
               }}
             >
+              {/* Top accent bar */}
               <div
                 style={{
                   position: "absolute",
@@ -92,6 +105,7 @@ export default function Projects() {
                 }}
               />
 
+              {/* Header */}
               <div
                 style={{
                   display: "flex",
@@ -106,9 +120,7 @@ export default function Projects() {
                     width: 40,
                     height: 40,
                     borderRadius: 8,
-                    background:
-                      categoryColors[proj.category] ??
-                      "rgba(108,99,255,.15)",
+                    background: categoryColors[proj.category],
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -117,7 +129,6 @@ export default function Projects() {
                 >
                   {proj.icon}
                 </div>
-
                 <span
                   style={{
                     background: "rgba(16,185,129,.1)",
@@ -143,7 +154,6 @@ export default function Projects() {
               >
                 {proj.title}
               </div>
-
               <div
                 style={{
                   fontSize: 13,
@@ -155,13 +165,9 @@ export default function Projects() {
                 {proj.description}
               </div>
 
+              {/* Tags */}
               <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 5,
-                  marginBottom: "1rem",
-                }}
+                style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: "1rem" }}
               >
                 {proj.tags.map((tag) => (
                   <span
@@ -191,7 +197,6 @@ export default function Projects() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 4,
-                  textDecoration: "none",
                 }}
               >
                 GitHub ↗

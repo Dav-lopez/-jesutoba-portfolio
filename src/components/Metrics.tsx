@@ -1,3 +1,5 @@
+"use client";
+
 import { metrics } from "@/data";
 
 export default function Metrics() {

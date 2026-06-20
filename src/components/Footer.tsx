@@ -4,7 +4,7 @@ const links = [
   { label: "Home", href: "#top" },
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
-  { label: "GitHub", href: "https://github.com/Dav-lopez/-jesutoba-portfolio", external: true },
+  { label: "GitHub", href: "https://github.com/JesutobaLopezfilio", external: true },
   { label: "LinkedIn", href: "https://linkedin.com/in/lopez-jesutoba", external: true },
   { label: "Contact", href: "#contact" },
 ];

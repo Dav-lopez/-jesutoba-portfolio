@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 
-
 const tags = [
   "Machine Learning",
   "Data Engineering",

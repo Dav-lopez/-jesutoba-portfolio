@@ -9,7 +9,7 @@ export const projects: Project[] = [
     stat: "95% accuracy",
     icon: "🤖",
     tags: ["Python", "Scikit-Learn", "Predictive Analytics", "ML Pipeline"],
-    github: "https://github.com/Dav-lopez/-jesutoba-portfolio",
+    github: "https://github.com/JesutobaLopezfilio",
     category: "ml",
     challenge:
       "Equipment failures caused unplanned operational disruptions and inefficient maintenance scheduling, leading to costly downtime.",
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     stat: "40% faster",
     icon: "🏗️",
     tags: ["Databricks", "Python", "SQL", "dbt", "ETL"],
-    github: "https://github.com/Dav-lopez/-jesutoba-portfolio",
+    github: "https://github.com/JesutobaLopezfilio",
     category: "data",
     challenge:
       "Legacy workflows and manual data processing increased operational effort and caused reporting inconsistencies across business units.",
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     stat: "75% less downtime",
     icon: "📊",
     tags: ["Grafana", "Terraform", "ELK", "SQL", "Elasticsearch"],
-    github: "https://github.com/Dav-lopez/-jesutoba-portfolio",
+    github: "https://github.com/JesutobaLopezfilio",
     category: "obs",
     challenge:
       "Banking application incidents had slow detection and resolution times due to lack of centralized observability across distributed services.",
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     stat: "3 stacks automated",
     icon: "⚙️",
     tags: ["Jenkins", "Terraform", "Ansible", "GitHub API", "CI/CD"],
-    github: "https://github.com/Dav-lopez/-jesutoba-portfolio",
+    github: "https://github.com/JesutobaLopezfilio",
     category: "devops",
     challenge:
       "Multiple application stacks required separate, manual deployment processes with inconsistent branch protection and repository standards.",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     stat: "50+ dashboards",
     icon: "📈",
     tags: ["Power BI", "Python", "SQL", "Analytics", "Reporting"],
-    github: "https://github.com/Dav-lopez/-jesutoba-portfolio",
+    github: "https://github.com/JesutobaLopezfilio",
     category: "sales",
     challenge:
       "Sales leadership lacked real-time visibility into KPIs and revenue trends, relying on manually compiled spreadsheet reports.",
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     stat: "Chi-Square + Fisher",
     icon: "🌦️",
     tags: ["R", "Statistical Analysis", "ML", "Data Cleaning"],
-    github: "https://github.com/Dav-lopez/-jesutoba-portfolio",
+    github: "https://github.com/JesutobaLopezfilio",
     category: "weather",
     challenge:
       "Identifying which weather variables were statistically significant predictors of rainfall in a large, messy real-world dataset.",

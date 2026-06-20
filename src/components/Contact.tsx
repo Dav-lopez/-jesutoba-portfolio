@@ -17,7 +17,7 @@ const contactLinks = [
     icon: "🐙",
     label: "GitHub",
     value: "JesutobaLopezfilio",
-    href: "https://github.com/Dav-lopez/-jesutoba-portfolio",
+    href: "https://github.com/JesutobaLopezfilio",
   },
   {
     icon: "📄",
@@ -47,10 +47,10 @@ export default function Contact() {
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        {/* Availability banner */}
         <div
           style={{
-            background:
-              "linear-gradient(135deg, rgba(108,99,255,.08), rgba(16,185,129,.08))",
+            background: "linear-gradient(135deg, rgba(108,99,255,.08), rgba(16,185,129,.08))",
             border: "1px solid rgba(108,99,255,.22)",
             borderRadius: 12,
             padding: "1.5rem 2rem",
@@ -68,40 +68,22 @@ export default function Contact() {
                 width: 10,
                 height: 10,
                 borderRadius: "50%",
-                background: "#10b981",
+                background: "var(--teal)",
+                animation: "pulse-dot 2s infinite",
                 display: "inline-block",
+                flexShrink: 0,
               }}
             />
-
             <div>
-              <strong
-                style={{
-                  display: "block",
-                  fontSize: 15,
-                  color: "var(--text)",
-                }}
-              >
+              <strong style={{ display: "block", fontSize: 15, color: "var(--text)" }}>
                 Available for full-time roles · Graduating May 2026
               </strong>
-
-              <span
-                style={{
-                  fontSize: 13,
-                  color: "var(--text2)",
-                }}
-              >
-                Based in Clarksville, TN · Open to Remote & Relocation
+              <span style={{ fontSize: 13, color: "var(--text2)" }}>
+                Based in Clarksville, TN · Open to remote &amp; relocation
               </span>
             </div>
           </div>
-
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 6,
-            }}
-          >
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
             {availableRoles.map((role) => (
               <span
                 key={role}
@@ -131,9 +113,8 @@ export default function Contact() {
             marginBottom: "0.75rem",
           }}
         >
-          LET'S TALK
+          Let&apos;s Talk
         </p>
-
         <h2
           style={{
             fontSize: "clamp(1.6rem,4vw,2.4rem)",
@@ -143,9 +124,8 @@ export default function Contact() {
             color: "var(--text)",
           }}
         >
-          Get In Touch
+          Get in Touch
         </h2>
-
         <p
           style={{
             fontSize: 15,
@@ -156,14 +136,13 @@ export default function Contact() {
           }}
         >
           Open to full-time opportunities, collaborations, and conversations
-          about engineering, machine learning, cloud infrastructure, and data
-          platforms.
+          about engineering.
         </p>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
             gap: "1rem",
           }}
         >
@@ -182,7 +161,16 @@ export default function Contact() {
                 display: "flex",
                 alignItems: "center",
                 gap: "1rem",
-                textDecoration: "none",
+                transition: "border-color .2s, background .2s",
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
+                (e.currentTarget as HTMLElement).style.background = "var(--surface2)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
+                (e.currentTarget as HTMLElement).style.background = "var(--surface)";
               }}
             >
               <div
@@ -200,7 +188,6 @@ export default function Contact() {
               >
                 {link.icon}
               </div>
-
               <div>
                 <div
                   style={{
@@ -211,14 +198,11 @@ export default function Contact() {
                 >
                   {link.label}
                 </div>
-
                 <div
                   style={{
                     fontSize: 14,
                     fontWeight: 600,
-                    color: link.accent
-                      ? "var(--accent3)"
-                      : "var(--text)",
+                    color: link.accent ? "var(--accent3)" : "var(--text)",
                   }}
                 >
                   {link.value}

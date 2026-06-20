@@ -7,7 +7,6 @@ const GITHUB_USERNAME = "Dav-lopez";
 
 function ContribGrid() {
   const weights = [0, 0, 0, 0, 1, 1, 1, 2, 2, 3];
-
   const colors = [
     "var(--border)",
     "rgba(108,99,255,.2)",
@@ -15,7 +14,6 @@ function ContribGrid() {
     "rgba(108,99,255,.75)",
     "var(--accent)",
   ];
-
   const cells = Array.from({ length: 364 }, (_, i) => {
     const w = weights[Math.floor((i * 7 + i * 3) % 10)];
     return colors[w];
@@ -59,15 +57,10 @@ export default function Github() {
       .then((repos) => {
         if (Array.isArray(repos)) {
           const total = repos.reduce(
-            (
-              acc: number,
-              r: {
-                stargazers_count?: number;
-              }
-            ) => acc + (r.stargazers_count || 0),
+            (acc: number, r: { stargazers_count?: number }) =>
+              acc + (r.stargazers_count || 0),
             0
           );
-
           setStars(total);
         }
       })
@@ -75,22 +68,10 @@ export default function Github() {
   }, []);
 
   const stats = [
-    {
-      value: user?.public_repos ?? "—",
-      label: "Public Repos",
-    },
-    {
-      value: stars ?? "—",
-      label: "Stars Earned",
-    },
-    {
-      value: user?.followers ?? "—",
-      label: "Followers",
-    },
-    {
-      value: 6,
-      label: "Featured Projects",
-    },
+    { value: user?.public_repos ?? "—", label: "Public Repos" },
+    { value: stars ?? "—", label: "Stars Earned" },
+    { value: user?.followers ?? "—", label: "Followers" },
+    { value: 6, label: "Featured Projects" },
   ];
 
   return (
@@ -108,7 +89,6 @@ export default function Github() {
         >
           Open Source
         </p>
-
         <h2
           style={{
             fontSize: "clamp(1.6rem,4vw,2.4rem)",
@@ -120,7 +100,6 @@ export default function Github() {
         >
           GitHub Activity
         </h2>
-
         <p
           style={{
             fontSize: 15,
@@ -130,10 +109,11 @@ export default function Github() {
             lineHeight: 1.65,
           }}
         >
-          Consistent contributions across machine learning, data engineering,
-          software engineering, and infrastructure repositories.
+          Consistent contributions across ML, data engineering, and
+          infrastructure repositories.
         </p>
 
+        {/* Stats */}
         <div
           style={{
             display: "grid",
@@ -157,28 +137,19 @@ export default function Github() {
                 style={{
                   fontSize: "1.8rem",
                   fontWeight: 700,
-                  color:
-                    s.label === "Featured Projects"
-                      ? "var(--teal)"
-                      : "var(--text)",
+                  color: s.label === "Featured Projects" ? "var(--teal)" : "var(--text)",
                 }}
               >
                 {s.value}
               </div>
-
-              <div
-                style={{
-                  fontSize: 11,
-                  color: "var(--text2)",
-                  marginTop: 3,
-                }}
-              >
+              <div style={{ fontSize: 11, color: "var(--text2)", marginTop: 3 }}>
                 {s.label}
               </div>
             </div>
           ))}
         </div>
 
+        {/* Contribution viz */}
         <div
           style={{
             background: "var(--surface)",
@@ -187,26 +158,14 @@ export default function Github() {
             padding: "1.25rem",
           }}
         >
-          <div
-            style={{
-              fontSize: 12,
-              color: "var(--text2)",
-            }}
-          >
-            Contribution Activity · 2024–2025
+          <div style={{ fontSize: 12, color: "var(--text2)" }}>
+            Contribution activity · 2024–2025
           </div>
-
           <ContribGrid />
         </div>
 
-        <div
-          style={{
-            marginTop: "1.5rem",
-            display: "flex",
-            gap: 12,
-            flexWrap: "wrap",
-          }}
-        >
+        {/* Links */}
+        <div style={{ marginTop: "1.5rem", display: "flex", gap: 12, flexWrap: "wrap" }}>
           <a
             href={`https://github.com/${GITHUB_USERNAME}`}
             target="_blank"
@@ -220,12 +179,19 @@ export default function Github() {
               fontWeight: 500,
               border: "1px solid var(--border2)",
               display: "inline-block",
-              textDecoration: "none",
+              transition: "all .2s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "var(--surface)";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "transparent";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--border2)";
             }}
           >
             View GitHub Profile ↗
           </a>
-
           <a
             href="https://linkedin.com/in/lopez-jesutoba"
             target="_blank"
@@ -239,7 +205,15 @@ export default function Github() {
               fontWeight: 500,
               border: "1px solid var(--border2)",
               display: "inline-block",
-              textDecoration: "none",
+              transition: "all .2s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "var(--surface)";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "transparent";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--border2)";
             }}
           >
             LinkedIn ↗
