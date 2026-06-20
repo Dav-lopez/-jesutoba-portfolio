@@ -38,7 +38,7 @@ export default function Hero() {
             display: "inline-block",
           }}
         />
-        Open to opportunities · Graduated May 2026
+        Open to opportunities · 
       </div>
 
       <h1

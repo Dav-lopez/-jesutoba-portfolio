@@ -76,10 +76,10 @@ export default function Contact() {
             />
             <div>
               <strong style={{ display: "block", fontSize: 15, color: "var(--text)" }}>
-                Available for full-time roles · Graduating May 2026
+                Available for full-time roles · Graduated May 2026
               </strong>
               <span style={{ fontSize: 13, color: "var(--text2)" }}>
-                Based in Clarksville, TN · Open to remote &amp; relocation
+                Based in USA · Open to remote &amp; relocation
               </span>
             </div>
           </div>

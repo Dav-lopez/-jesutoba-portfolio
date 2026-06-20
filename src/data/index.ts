@@ -125,8 +125,8 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
-    period: "2025 — Present",
-    role: "Data Engineering Intern",
+    period: "2025 ",
+    role: "Data Engineering",
     company: "Guardian Life Insurance",
     description:
       "Built Databricks automation pipelines and SQL transformation workflows, reducing processing time by 40% and achieving 99% workflow success rates. Developed analytics-ready datasets and improved reporting consistency across the platform.",
@@ -195,5 +195,5 @@ export const metrics = [
   { value: "75%", label: "Downtime Reduction" },
   { value: "40%", label: "Faster Data Processing" },
   { value: "99%", label: "Workflow Success Rate" },
-  { value: "2+", label: "Years Experience" },
+  { value: "5+", label: "Years Experience" },
 ];

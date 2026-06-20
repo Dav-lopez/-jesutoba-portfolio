@@ -46,7 +46,7 @@ export default function Skills() {
             lineHeight: 1.65,
           }}
         >
-          Spanning the full lifecycle — from model training and data pipelines
+          Spanning the full lifecycle, from model training and data pipelines
           to production deployment and observability.
         </p>
 
