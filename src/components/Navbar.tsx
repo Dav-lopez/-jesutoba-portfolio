@@ -8,6 +8,7 @@ const navLinks = [
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#case-studies", label: "Case Studies" },
   { href: "#github", label: "GitHub" },
   { href: "#contact", label: "Contact" },
 ];
@@ -51,7 +52,7 @@ export default function Navbar() {
         }}
       >
         <Link href="/" style={{ fontSize: 15, fontWeight: 700, letterSpacing: "-0.3px", color: "var(--text)" }}>
-          J<span style={{ color: "var(--accent3)" }}>L</span>
+          Jesutoba<span style={{ color: "var(--accent3)" }}>Lopez</span>
         </Link>
 
         {/* Desktop links */}
