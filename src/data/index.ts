@@ -1,6 +1,10 @@
 import type { Project, Experience, Skill } from "@/types";
 
 export const projects: Project[] = [
+  {"id":"civicpulse-2026","title":"CivicPulse — 2026 Election Dashboard","description":"Streamlit dashboard tracking congressional elections, with caching, health monitoring and automated tests.","stat":"97 tests","icon":"🗳️","tags":["Python","Streamlit","APIs","Caching"],"github":"https://github.com/Dav-lopez/mid-elections","category":"data","challenge":"Build reliable user-facing software for a real operational use case.","solution":"Developing and testing application workflows with modern web and data engineering tools.","impact":["Project repository available for technical review"]},
+  {"id":"who-did-that","title":"WHO DID THAT?! — Multiplayer Party Game","description":"Live room-based multiplayer browser game with Classic and Survival Squad modes.","stat":"Live demo","icon":"🎮","tags":["Python","Flask","Socket.IO","Render"],"github":"https://github.com/Dav-lopez/who-did-that","category":"devops","challenge":"Build reliable user-facing software for a real operational use case.","solution":"Developing and testing application workflows with modern web and data engineering tools.","impact":["Project repository available for technical review"]},
+  {"id":"drugai","title":"DrugAI — Pharmacy Inventory Platform","description":"In-development pharmacy inventory application and database-backed workflows.","stat":"In development","icon":"💊","tags":["Next.js","TypeScript","Prisma","PostgreSQL"],"github":"https://github.com/Dav-lopez/drugai","category":"data","challenge":"Build reliable user-facing software for a real operational use case.","solution":"Developing and testing application workflows with modern web and data engineering tools.","impact":["Project repository available for technical review"]},
+
   {
     id: "predictive-maintenance",
     title: "Predictive Maintenance ML Platform",
@@ -9,7 +13,7 @@ export const projects: Project[] = [
     stat: "95% accuracy",
     icon: "🤖",
     tags: ["Python", "Scikit-Learn", "Predictive Analytics", "ML Pipeline"],
-    github: "https://github.com/Dav-lopezlio",
+    github: "https://github.com/Dav-lopez",
     category: "ml",
     challenge:
       "Equipment failures caused unplanned operational disruptions and inefficient maintenance scheduling, leading to costly downtime.",
@@ -29,7 +33,7 @@ export const projects: Project[] = [
     stat: "40% faster",
     icon: "🏗️",
     tags: ["Databricks", "Python", "SQL", "dbt", "ETL"],
-    github: "https://github.com/Dav-lopezlio",
+    github: "https://github.com/Dav-lopez",
     category: "data",
     challenge:
       "Legacy workflows and manual data processing increased operational effort and caused reporting inconsistencies across business units.",
@@ -49,7 +53,7 @@ export const projects: Project[] = [
     stat: "75% less downtime",
     icon: "📊",
     tags: ["Grafana", "Terraform", "ELK", "SQL", "Elasticsearch"],
-    github: "https://github.com/Dav-lopezlio",
+    github: "https://github.com/Dav-lopez",
     category: "obs",
     challenge:
       "Banking application incidents had slow detection and resolution times due to lack of centralized observability across distributed services.",
@@ -69,7 +73,7 @@ export const projects: Project[] = [
     stat: "3 stacks automated",
     icon: "⚙️",
     tags: ["Jenkins", "Terraform", "Ansible", "GitHub API", "CI/CD"],
-    github: "https://github.com/Dav-lopezlio",
+    github: "https://github.com/Dav-lopez",
     category: "devops",
     challenge:
       "Multiple application stacks required separate, manual deployment processes with inconsistent branch protection and repository standards.",
@@ -89,7 +93,7 @@ export const projects: Project[] = [
     stat: "50+ dashboards",
     icon: "📈",
     tags: ["Power BI", "Python", "SQL", "Analytics", "Reporting"],
-    github: "https://github.com/Dav-lopezlio",
+    github: "https://github.com/Dav-lopez",
     category: "sales",
     challenge:
       "Sales leadership lacked real-time visibility into KPIs and revenue trends, relying on manually compiled spreadsheet reports.",
@@ -109,7 +113,7 @@ export const projects: Project[] = [
     stat: "Chi-Square + Fisher",
     icon: "🌦️",
     tags: ["R", "Statistical Analysis", "ML", "Data Cleaning"],
-    github: "https://github.com/Dav-lopezlio",
+    github: "https://github.com/Dav-lopez",
     category: "weather",
     challenge:
       "Identifying which weather variables were statistically significant predictors of rainfall in a large, messy real-world dataset.",
@@ -173,11 +177,11 @@ export const skills: Skill[] = [
   },
   {
     category: "Software Engineering",
-    skills: ["C#", ".NET", "Java", "REST APIs", "R", "Node.js"],
+    skills: ["C#", ".NET", "Java", "REST APIs", "R", "Node.js", "TypeScript", "Next.js", "React"],
   },
   {
     category: "Cloud & Platform",
-    skills: ["Terraform", "Docker", "Kubernetes", "AWS", "Jenkins", "Ansible"],
+    skills: ["Terraform", "Docker", "Kubernetes", "AWS", "Jenkins", "Ansible", "Vercel", "Render"],
   },
   {
     category: "Observability",
