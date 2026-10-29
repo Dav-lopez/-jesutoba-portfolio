@@ -26,6 +26,7 @@ export interface Project {
   icon: string;
   tags: string[];
   github: string;
+  demo?: string;
   category: "ml" | "data" | "devops" | "obs" | "sales" | "weather";
   challenge: string;
   solution: string;

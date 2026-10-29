@@ -186,6 +186,8 @@ export default function Projects() {
                 ))}
               </div>
 
+              <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
+                {proj.demo && <a href={proj.demo} target="_blank" rel="noopener noreferrer" aria-label={`Open live demo: ${proj.title}`} style={{ color: "var(--teal2)", fontSize: 12, fontWeight: 700 }}>Live Demo ↗</a>}
               <a
                 href={proj.github}
                 target="_blank"
@@ -199,8 +201,9 @@ export default function Projects() {
                   gap: 4,
                 }}
               >
-                GitHub ↗
+                Source Code ↗
               </a>
+              </div>
             </div>
           ))}
         </div>
