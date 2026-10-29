@@ -33,7 +33,7 @@ export const caseStudyCategories: CaseStudyCategory[] = [
     projects: [
       {
         id: "Final_Project_Predictive",
-        title: "Final_Project_Predictive",
+        title: "Predictive Maintenance — Machine Learning",
         description:
           "End-to-end ML system forecasting equipment failure with 95% accuracy using Scikit-Learn. Covers data pipeline, feature engineering, model selection, validation, and deployment architecture.",
         file: "/projects/ml/Final_Project_Predictive.pdf",
@@ -45,7 +45,7 @@ export const caseStudyCategories: CaseStudyCategory[] = [
         title: "Australian Weather Prediction",
         description:
           "Statistical ML research applying Fisher's Exact Test and Chi-Square testing to identify significant rainfall predictors across Australian weather stations.",
-        file: "/projects/ml/weather-prediction.pdf",
+        file: null,
         tags: ["R", "Fisher's Exact Test", "Chi-Square", "Regression"],
         pages: "12 pages",
       },
@@ -85,7 +85,7 @@ export const caseStudyCategories: CaseStudyCategory[] = [
         title: "Guardian Life Data Engineering Platform",
         description:
           "Full case study of Databricks automation pipelines and SQL transformation layers achieving 40% faster processing and 99% workflow success rate.",
-        file: "/projects/data-engineering/guardian-platform.pdf",
+        file: null,
         tags: ["Databricks", "Python", "SQL", "dbt"],
         pages: "15 pages",
       },
@@ -125,7 +125,7 @@ export const caseStudyCategories: CaseStudyCategory[] = [
         title: "Enterprise Monitoring Platform",
         description:
           "Grafana + ELK Stack observability solution for NIBSS banking applications, reducing downtime by 75% through automated alerting and Terraform-managed dashboards.",
-        file: "/projects/devops/grafana-monitoring.pdf",
+        file: null,
         tags: ["Grafana", "Terraform", "ELK", "Elasticsearch"],
         pages: "14 pages",
       },
