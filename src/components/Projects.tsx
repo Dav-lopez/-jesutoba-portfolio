@@ -192,7 +192,9 @@ export default function Projects() {
                   Live website ↗
                 </a>
               )}
-              <a
+              {proj.id === "bank-deposit-ann" || proj.id === "student-math-regression" || proj.id === "patient-pro-glm" ? (
+                <a href={`/research#${proj.id}`} style={{ fontSize: 12, color: "var(--accent3)", fontWeight: 600 }}>Read case study ↗</a>
+              ) : <a
                 href={proj.github}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -206,7 +208,7 @@ export default function Projects() {
                 }}
               >
                 Source code ↗
-              </a>
+              </a>}
               </div>
             </div>
           ))}
